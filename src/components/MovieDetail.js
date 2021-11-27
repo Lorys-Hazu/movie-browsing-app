@@ -4,7 +4,7 @@ import './MovieDetail.css'
 export default function MovieDetail({movie, userHasSearched}) {
     return (
         <div>
-            { userHasSearched && <>
+            { (userHasSearched && movie) && <>
             <div className="headerRow">
                 <img className="poster" alt={movie.poster_path ? movie.title + ' poster image' : null} src={movie.poster_path ? `https://image.tmdb.org/t/p/original/${movie.poster_path}` : null}/>
                 <div>   
