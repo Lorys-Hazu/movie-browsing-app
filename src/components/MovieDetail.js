@@ -2,7 +2,6 @@ import React from "react";
 import './MovieDetail.css'
 
 export default function MovieDetail({movie, userHasSearched}) {
-    console.log(movie)
     return (
         <div>
             { userHasSearched && <>
