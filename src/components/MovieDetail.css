@@ -1,0 +1,25 @@
+
+h1 {
+    font-size: 5rem;
+    margin-left: 10px;
+}
+
+p {
+    font-size: 1.4rem;
+    margin-left: 10px;
+}
+
+.poster {
+    width: 20vw;
+    object-fit: contain;
+    padding: 10px;
+}
+
+.headerRow {
+    display: flex;
+    flex-direction: row;
+}
+
+.overview {
+    padding: 20px;
+}

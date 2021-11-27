@@ -1,0 +1,22 @@
+ul {
+    overflow:scroll; 
+    max-height: 70vh;
+}
+
+li {
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    border-top: 1px solid grey;
+    border-collapse: collapse;
+    cursor: pointer;
+    transition: background-color 150ms;
+}
+
+li:first-child {
+    border: 0;
+}
+
+li:hover {
+    background-color: rgb(149, 208, 228);
+}
+
