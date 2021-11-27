@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import SearchMovies from './components/SearchMovies';
 import { useState } from 'react';
@@ -13,6 +13,8 @@ function App() {
 
   const [selectedMovie, setSelectedMovie] = useState([]);
 
+  const [userHasSearched, setUserHasSearched] = useState(false);
+
   const searchMovies = async (e) => {
     e.preventDefault()
 
@@ -24,11 +26,14 @@ function App() {
           const res = await fetch(url);
           const data = await res.json();
           setMovies(data.results)
+          data.results && setUserHasSearched(true)
+          
       }catch(err) {
           console.error(err)
-          setMovies([])
       }
     }
+
+    useEffect(()=> movies && setSelectedMovie(movies[0]), [movies])
 
     const changeQuery = (e) => {
       setQuery(e.target.value)
@@ -42,7 +47,7 @@ function App() {
         <MoviesList movies={movies} changeSelectedMovie={(movie) => setSelectedMovie(movie)}/>
       </aside>
       <section>
-        <MovieDetail movie={selectedMovie}/>
+        <MovieDetail movie={selectedMovie} userHasSearched={userHasSearched}/>
       </section>
     </div>
     </>

@@ -7,7 +7,7 @@ export default function MoviesList({movies, changeSelectedMovie}) {
         <div className="card-list">
             <ul>
                 {movies === undefined 
-                ? <p>Vous devez rechercher un film d'abord</p>
+                ? <p>You should write a movie name in the searchbar before ;)</p>
                 : movies.map(movie => (
                     <li className="card" key={movie.id} onClick={()=>changeSelectedMovie(movie)}>
                         {movie.title}
