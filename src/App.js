@@ -15,8 +15,7 @@ function App() {
 
   const [userHasSearched, setUserHasSearched] = useState(false);
 
-  const searchMovies = async (e) => {
-    e.preventDefault()
+  const searchMovies = async () => {
 
     const api_key = "ff5722911d39e084b370a9e6f1ba624b"
 
@@ -34,6 +33,8 @@ function App() {
     }
 
     useEffect(()=> movies && setSelectedMovie(movies[0]), [movies])
+
+    useEffect(searchMovies, [query])
 
     const changeQuery = (e) => {
       setQuery(e.target.value)
